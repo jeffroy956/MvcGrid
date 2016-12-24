@@ -1,0 +1,52 @@
+﻿@using Infragistics.Web.Mvc;
+@using MvcGrid.Helpers;
+@using MvcGrid.Models;
+
+<link href="~/Content/website.css" rel="stylesheet" />
+
+@model IQueryable<PriceHistory>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Stock Price History by Company</h2>
+@(Html.Infragistics()
+    .Grid(Model)
+    .ID("igGrid")
+    .AutoGenerateColumns(false)
+    .Columns(column =>
+    {
+        column.For(x => x.CompanyName).HeaderText("Company");
+        column.For(x => x.Industry);
+        column.For(x => x.Symbol).Width("70px");
+        column.MultiColumnHeader().HeaderText("Current")
+            .Group(currentCol =>
+            {
+                currentCol.For(x => x.CurrentPrice).HeaderCssClass("col--short-numeric").ColumnCssClass("col--short-numeric").HeaderText("Price");
+                currentCol.For(x => x.CurrentBid).HeaderCssClass("col--short-numeric").ColumnCssClass("col--short-numeric").HeaderText("Bid");
+                currentCol.For(x => x.CurrentAsk).HeaderCssClass("col--short-numeric").ColumnCssClass("col--short-numeric").HeaderText("Ask");
+            });
+        column.MultiColumnHeader().HeaderText("Price History")
+            .Group(priceCol =>
+            {
+                priceCol.For(x => x.Price1YearsAgo).HeaderCssClass("col--short-numeric").ColumnCssClass("col--short-numeric").HeaderText(YearsAgo.LabelFor(1));
+                priceCol.For(x => x.Price2YearsAgo).HeaderCssClass("col--short-numeric").ColumnCssClass("col--short-numeric").HeaderText(YearsAgo.LabelFor(2));
+                priceCol.For(x => x.Price3YearsAgo).HeaderCssClass("col--short-numeric").ColumnCssClass("col--short-numeric").HeaderText(YearsAgo.LabelFor(3));
+                priceCol.For(x => x.Price4YearsAgo).HeaderCssClass("col--short-numeric").ColumnCssClass("col--short-numeric").HeaderText(YearsAgo.LabelFor(4));
+                priceCol.For(x => x.Price5YearsAgo).HeaderCssClass("col--short-numeric").ColumnCssClass("col--short-numeric").HeaderText(YearsAgo.LabelFor(5));
+            });
+    })
+    .Features(f =>
+    {
+        f.MultiColumnHeaders();
+        f.Responsive()
+        .EnableVerticalRendering(false)
+        .SingleColumnTemplate(rsw =>
+        {
+            rsw.AddSingleColumnTemplate("phone", YearsAgo.ReplaceContentLabels(ResourceHelper.GetIgniteTemplate("MobileStockDetailTemplate"), DateTime.Now.Year));
+        });
+    })
+    .DataBind()
+    .Render())
+
+
+

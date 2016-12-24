@@ -1,0 +1,105 @@
+/*
+    http://www.igniteui.com/help/iggrid-responsive-web-design-mode-overview
+    phone 767 pixels
+    tablet 768 to 979 pixels
+    desktop > 980 pixels
+*/
+@media only screen and (max-width: 979px) {
+  .ui-iggrid-responsive-vertical tr > td:first-child .stock-row__container {
+    font-weight: normal;
+  }
+  .ui-iggrid td.ui-state-hover .stock-row__container {
+    background-color: #fff;
+  }
+  .ui-iggrid-responsive-vertical tr > td.ui-state-hover:first-child {
+    background-color: #fff;
+  }
+  .ui-iggrid table tbody td {
+    padding: 0;
+  }
+  .ui-iggrid td.ui-state-hover {
+    background-color: #fff;
+  }
+}
+.column-group__header {
+  text-align: center;
+  color: #fff;
+  background-color: #888;
+  padding: 3px;
+}
+.item-label {
+  color: #fff;
+  background-color: #888;
+  text-align: center;
+  padding: 3px;
+}
+.item-value {
+  text-align: right;
+  padding: 3px;
+}
+.col--short-numeric {
+  text-align: right;
+  padding-right: 8px !important;
+  width: 70px;
+}
+th.col--short-numeric {
+  text-align: center;
+}
+.vertical-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+.vt__row {
+  display: table-row;
+}
+.vt__row div {
+  display: table-cell;
+  border: 1px solid #ccc;
+  padding: 3px;
+}
+.vt__row div:first-child {
+  background-color: #888;
+  color: #fff;
+}
+.stock-row__container {
+  display: flex;
+}
+.stock-row__info-panel {
+  flex: 1;
+}
+.stock-row__price-history {
+  flex: 2;
+}
+.stock-detail__company-info {
+  padding: 3px;
+  padding-right: 0;
+}
+.stock-row__company {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.stock-detail__price-info {
+  padding: 3px;
+  padding-right: 0;
+}
+.price_history__container {
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px 0 0 1px;
+}
+.price_history__item {
+  width: calc(33.33333333%);
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 0 1px 1px 0;
+}
+@media only screen and (max-width: 500px) {
+  .price_history__item {
+    width: 50%;
+  }
+}
+
+/*# sourceMappingURL=website.css.map */

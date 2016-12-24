@@ -1,0 +1,54 @@
+﻿<div class="stock-row__container">
+    <div class="stock-row__info-panel">
+        <div class="stock-detail__company-info">
+            <div class="stock-row__company">
+                ${CompanyName} [${Symbol}]
+            </div>
+            <div class="stock-row__industry">
+                ${Industry}
+            </div>
+        </div>
+        <div class="stock-detail__price-info">
+            <!-- infragistics maniplates basic tables in undesired ways by default, had to use div based table to work around -->
+            <div class="vertical-table">
+                <div class="vt__row">
+                    <div>Bid:</div>
+                    <div>${CurrentBid}</div>
+                </div>
+                <div class="vt__row">
+                    <div>Ask:</div>
+                    <div>${CurrentAsk}</div>
+                </div>
+                <div class="vt__row">
+                    <div>Price:</div>
+                    <div>${CurrentPrice}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stock-row__price-history">
+        <div class="column-group__header">Price History</div>
+        <div class="price_history__container">
+            <div class="price_history__item">
+                <div class="item-label">${1YearsAgoLabel}</div>
+                <div class="item-value">${Price1YearsAgo}</div>
+            </div>
+            <div class="price_history__item">
+                <div class="item-label">${2YearsAgoLabel}</div>
+                <div class="item-value">${Price2YearsAgo}</div>
+            </div>
+            <div class="price_history__item">
+                <div class="item-label">${3YearsAgoLabel}</div>
+                <div class="item-value">${Price3YearsAgo}</div>
+            </div>
+            <div class="price_history__item">
+                <div class="item-label">${4YearsAgoLabel}</div>
+                <div class="item-value">${Price4YearsAgo}</div>
+            </div>
+            <div class="price_history__item">
+                <div class="item-label">${5YearsAgoLabel}</div>
+                <div class="item-value">${Price5YearsAgo}</div>
+            </div>
+        </div>
+    </div>
+</div>

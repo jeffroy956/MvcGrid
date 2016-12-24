@@ -1,0 +1,95 @@
+﻿@import "_variables";
+
+.column-group__header {
+    text-align: center;
+    color: #fff;
+    background-color: @igDarkGrey;
+    padding: @standardPadding;
+}
+.item-label {
+    color: #fff;
+    background-color: @igDarkGrey;
+    text-align: center;
+    padding: @standardPadding;
+}
+
+.item-value {
+    text-align: right;
+    padding: @standardPadding;
+}
+
+.col--short-numeric {
+    text-align: right;
+    padding-right: 8px !important;
+    width: 70px;
+}
+
+th.col--short-numeric {
+    text-align: center;
+}
+
+
+.vertical-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vt__row {
+    display: table-row;
+    div {
+        display: table-cell;
+        border: 1px solid @igMediumGrey;
+
+        padding: @standardPadding;
+        &:first-child {
+            background-color: @igDarkGrey;
+            color: #fff;
+        }
+    }
+}
+
+.stock-row__container {
+    display: flex;
+}
+
+.stock-row__info-panel {
+    flex: 1;
+}
+
+.stock-row__price-history {
+    flex: 2;
+}
+
+.stock-detail__company-info {
+    padding: @standardPadding;
+    padding-right: 0;
+}
+
+.stock-row__company {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.stock-detail__price-info {
+    padding: @standardPadding;
+    padding-right: 0;
+}
+
+.price_history__container {
+    display: flex;
+    flex-wrap: wrap;
+    border-style: solid;
+    border-color: @igMediumGrey;
+    border-width: 1px 0 0 1px;
+}
+
+.price_history__item {
+    width: calc(100% / 3);
+    border-style: solid;
+    border-color: @igMediumGrey;
+    border-width: 0 1px 1px 0;
+    @media only screen and (max-width: @tinyWidth) {
+        width: 50%;
+    }
+}
