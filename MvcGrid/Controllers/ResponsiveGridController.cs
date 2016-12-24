@@ -14,7 +14,7 @@ namespace MvcGrid.Controllers
         {
             PriceHistoryRepository swRepo = new PriceHistoryRepository();
 
-            return View(swRepo.GetAll().AsQueryable());
+            return View(swRepo.GetAll().Take(10).AsQueryable());
         }
     }
 }

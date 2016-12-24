@@ -16,7 +16,7 @@ namespace MvcGrid.Data
             List<PriceHistory> stocks = new List<PriceHistory>();
             foreach(var company in Business.SampleCompanies)
             {
-                stocks.Add(new PriceHistory()
+                PriceHistory priceRecord = new PriceHistory()
                 {
                     Symbol = company.Symbol,
                     Industry = company.Industry,
@@ -26,11 +26,14 @@ namespace MvcGrid.Data
                     Price3YearsAgo = GetNextDecimal(20, 50),
                     Price2YearsAgo = GetNextDecimal(20, 50),
                     Price1YearsAgo = GetNextDecimal(20, 50),
-                    CurrentAsk = GetNextDecimal(20, 50),
-                    CurrentBid = GetNextDecimal(20, 50),
                     CurrentPrice = GetNextDecimal(20, 50),
                     CurrentDividend = GetNextDecimal(1, 5),
-                });
+                };
+
+                priceRecord.CurrentAsk = priceRecord.CurrentPrice + GetNextDecimal(0, 0.1M);
+                priceRecord.CurrentBid = priceRecord.CurrentPrice - GetNextDecimal(0, 0.1M);
+
+                stocks.Add(priceRecord);
             }
             return stocks;
         }
