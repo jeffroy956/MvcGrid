@@ -1,13 +1,11 @@
 ﻿@using Infragistics.Web.Mvc;
 @using MvcGrid.Helpers;
 @using MvcGrid.Models;
-
-<link href="~/Content/website.css" rel="stylesheet" />
-
 @model IQueryable<PriceHistory>
 @{
     ViewBag.Title = "Index";
 }
+
 <h2>Stock Price History by Company</h2>
 @(Html.Infragistics()
     .Grid(Model)
