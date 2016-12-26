@@ -169,12 +169,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResponsiveGridController.cs" />
+    <Compile Include="Data\BookValueRepository.cs" />
     <Compile Include="Data\PriceHistoryRepository.cs" />
+    <Compile Include="Data\FakeNumbers.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\ResourceNotFoundException.cs" />
+    <Compile Include="Models\BookValue.cs" />
+    <Compile Include="Models\BookValuePivot.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\PriceHistory.cs" />
     <Compile Include="Models\YearsAgo.cs" />
@@ -938,6 +942,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\ResponsiveGrid\Index.cshtml" />
+    <Content Include="Views\ResponsiveGrid\Book.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

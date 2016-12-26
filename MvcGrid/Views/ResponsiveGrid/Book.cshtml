@@ -1,0 +1,31 @@
+﻿@using Infragistics.Web.Mvc;
+@using MvcGrid.Helpers;
+@using MvcGrid.Models;
+@using Newtonsoft.Json;
+
+@model IQueryable<dynamic>
+
+<h2>Book to Market by Company</h2>
+<div id="igBookGrid"></div>
+
+<script type="text/javascript">
+    var bookValueResults = @Html.Raw(JsonConvert.SerializeObject(Model));
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        var bvColumns = [
+            { headerText: "Company", key: "CompanyName" },
+            { headerText: "Symbol", key: "Symbol" }
+        ];
+
+        for(var i = 0; i < bookValueResults[0].NumYears; i++) {
+            bvColumns.push({headerText: "BookToMarket" + i, key: "BookToMarket" + i});
+        }
+
+        $("#igBookGrid").igGrid({
+            columns: bvColumns,
+            dataSource: bookValueResults
+        })
+    })
+</script>

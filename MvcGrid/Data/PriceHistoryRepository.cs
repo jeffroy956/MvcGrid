@@ -9,11 +9,9 @@ namespace MvcGrid.Data
     public class PriceHistoryRepository
     {
 
-        private Random _rand = new Random();
-
         public List<PriceHistory> GetAll()
         {
-            List<PriceHistory> stocks = new List<PriceHistory>();
+            List<PriceHistory> prices = new List<PriceHistory>();
             foreach(var company in Business.SampleCompanies)
             {
                 PriceHistory priceRecord = new PriceHistory()
@@ -21,26 +19,21 @@ namespace MvcGrid.Data
                     Symbol = company.Symbol,
                     Industry = company.Industry,
                     CompanyName = company.Name,
-                    Price5YearsAgo = GetNextDecimal(20, 50),
-                    Price4YearsAgo = GetNextDecimal(20, 50),
-                    Price3YearsAgo = GetNextDecimal(20, 50),
-                    Price2YearsAgo = GetNextDecimal(20, 50),
-                    Price1YearsAgo = GetNextDecimal(20, 50),
-                    CurrentPrice = GetNextDecimal(20, 50),
-                    CurrentDividend = GetNextDecimal(1, 5),
+                    Price5YearsAgo = FakeNumbers.GetNextDecimal(20, 50),
+                    Price4YearsAgo = FakeNumbers.GetNextDecimal(20, 50),
+                    Price3YearsAgo = FakeNumbers.GetNextDecimal(20, 50),
+                    Price2YearsAgo = FakeNumbers.GetNextDecimal(20, 50),
+                    Price1YearsAgo = FakeNumbers.GetNextDecimal(20, 50),
+                    CurrentPrice = FakeNumbers.GetNextDecimal(20, 50),
+                    CurrentDividend = FakeNumbers.GetNextDecimal(1, 5),
                 };
 
-                priceRecord.CurrentAsk = priceRecord.CurrentPrice + GetNextDecimal(0, 0.1M);
-                priceRecord.CurrentBid = priceRecord.CurrentPrice - GetNextDecimal(0, 0.1M);
+                priceRecord.CurrentAsk = priceRecord.CurrentPrice + FakeNumbers.GetNextDecimal(0, 0.1M);
+                priceRecord.CurrentBid = priceRecord.CurrentPrice - FakeNumbers.GetNextDecimal(0, 0.1M);
 
-                stocks.Add(priceRecord);
+                prices.Add(priceRecord);
             }
-            return stocks;
-        }
-
-        private decimal GetNextDecimal(decimal floor, decimal maxDelta)
-        {
-            return floor + Math.Round((decimal)_rand.NextDouble() * maxDelta, 2);
+            return prices;
         }
 
     }

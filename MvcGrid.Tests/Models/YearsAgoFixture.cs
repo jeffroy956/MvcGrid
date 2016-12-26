@@ -10,8 +10,8 @@ namespace MvcGrid.Tests.Models
         [TestMethod]
         public void ReplaceYearsAgoLabels()
         {
-            string content = "${6YearsAgoLabel},${1YearsAgoLabel}";
-            Assert.AreEqual("2010,2015", YearsAgo.ReplaceContentLabels(content, 2016));
+            string content = "${5YearsAgoLabel},${1YearsAgoLabel}";
+            Assert.AreEqual("2011,2015", YearsAgo.ReplaceContentLabels(content, 2016));
         }
     }
 }

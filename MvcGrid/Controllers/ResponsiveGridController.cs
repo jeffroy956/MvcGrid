@@ -1,4 +1,5 @@
 ﻿using MvcGrid.Data;
+using MvcGrid.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,14 @@ namespace MvcGrid.Controllers
             PriceHistoryRepository swRepo = new PriceHistoryRepository();
 
             return View(swRepo.GetAll().Take(10).AsQueryable());
+        }
+
+        public ActionResult Book()
+        {
+            BookValueRepository bvr = new BookValueRepository();
+            var pivotedData = BookValuePivot.Pivot(bvr.GetAll(5), 5);
+
+            return View(pivotedData.AsQueryable());
         }
     }
 }
