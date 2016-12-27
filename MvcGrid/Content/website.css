@@ -5,10 +5,10 @@
     desktop > 980 pixels
 */
 @media only screen and (max-width: 979px) {
-  .ui-iggrid-responsive-vertical tr > td:first-child .stock-row__container {
+  .ui-iggrid-responsive-vertical tr > td:first-child .mobile-row__container {
     font-weight: normal;
   }
-  .ui-iggrid td.ui-state-hover .stock-row__container {
+  .ui-iggrid td.ui-state-hover .mobile-row__container {
     background-color: #fff;
   }
   .ui-iggrid-responsive-vertical tr > td.ui-state-hover:first-child {
@@ -45,6 +45,9 @@
 th.col--short-numeric {
   text-align: center;
 }
+.col--narrow-text {
+  width: 70px;
+}
 .vertical-table {
   display: table;
   width: 100%;
@@ -62,13 +65,13 @@ th.col--short-numeric {
   background-color: #888;
   color: #fff;
 }
-.stock-row__container {
+.mobile-row__container {
   display: flex;
 }
-.stock-row__info-panel {
+.mobile-row__info-panel {
   flex: 1;
 }
-.stock-row__price-history {
+.mobile-row__values-info {
   flex: 2;
 }
 .stock-detail__company-info {

@@ -926,6 +926,7 @@
     <Content Include="Scripts\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
     <Content Include="Scripts\_references.js" />
+    <EmbeddedResource Include="Templates\MobilePriceToBookTemplate.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

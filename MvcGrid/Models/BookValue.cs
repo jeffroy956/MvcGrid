@@ -18,7 +18,7 @@ namespace MvcGrid.Models
         {
             get
             {
-                return (TotalAssets - TotalLiabilities) / MarketCap;
+                return Decimal.Round((TotalAssets - TotalLiabilities) / MarketCap, 2);
             }
         }
 

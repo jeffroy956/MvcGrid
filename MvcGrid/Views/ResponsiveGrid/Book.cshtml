@@ -16,16 +16,38 @@
     $(function () {
         var bvColumns = [
             { headerText: "Company", key: "CompanyName" },
-            { headerText: "Symbol", key: "Symbol" }
+            { headerText: "Symbol", key: "Symbol", headerCssClass: "col--narrow-text", columnCssClass: "col--narrow-text" }
         ];
 
+        var bookValueGroup = {
+            headerText: "Book To Market",
+            group: []
+        };
         for(var i = 0; i < bookValueResults[0].NumYears; i++) {
-            bvColumns.push({headerText: "BookToMarket" + i, key: "BookToMarket" + i});
+            var yearHeaderText = (bookValueResults[0].BaseYear - i).toString();
+            bookValueGroup.group.push({headerText: yearHeaderText, key: "BookToMarket" + i,
+                columnCssClass: "col--short-numeric", headerCssClass:"col--short-numeric", width: "70px"});
         }
+
+        bvColumns.push(bookValueGroup);
 
         $("#igBookGrid").igGrid({
             columns: bvColumns,
-            dataSource: bookValueResults
+            dataSource: bookValueResults,
+            width: "100%",
+            features: [
+                {
+                    name: "MultiColumnHeaders"
+                },
+                {
+                    name: "Responsive",
+                    enableVerticalRendering: false,
+                    singleColumnTemplate: {
+                        phone: '@Html.Raw(YearsAgo.ReplaceContentLabels(ResourceHelper.GetIgniteTemplate("MobilePriceToBookTemplate"), DateTime.Now.Year))'
+                    }
+                 }
+
+            ]
         })
     })
 </script>

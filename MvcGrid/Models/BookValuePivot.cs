@@ -8,6 +8,7 @@ namespace MvcGrid.Models
 {
     public class BookValuePivot
     {
+
         public static List<dynamic> Pivot(IEnumerable<BookValue> pivotSource, int numYears)
         {
             List<dynamic> pivotData = new List<dynamic>();
@@ -21,6 +22,7 @@ namespace MvcGrid.Models
                 pivotedBookValue.CompanyName = companyData.Key;
                 pivotedBookValue.Symbol = companyData.First().Symbol;
                 pivotedBookValue.NumYears = numYears;
+                pivotedBookValue.BaseYear = DateTime.Now.Year;
 
                 foreach (var annualBookValue in companyData.OrderBy(bv => bv.YearsAgo))
                 {

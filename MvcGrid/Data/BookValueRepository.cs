@@ -21,10 +21,11 @@ namespace MvcGrid.Data
                         CompanyName = company.Name,
                         Symbol = company.Symbol,
                         YearsAgo = i,
-                        MarketCap = FakeNumbers.GetNextDecimal(25000, 100000),
-                        TotalAssets = FakeNumbers.GetNextDecimal(25000, 100000),
-                        TotalLiabilities = FakeNumbers.GetNextDecimal(25000, 100000),
+                        MarketCap = FakeNumbers.GetNextDecimal(50000, 100000)
                     };
+
+                    bookValue.TotalAssets = FakeNumbers.GetNextDecimal(bookValue.MarketCap + 50000, 100000);
+                    bookValue.TotalLiabilities = FakeNumbers.GetNextDecimal(bookValue.MarketCap - 50000, 100000);
 
                     results.Add(bookValue);
                 }
