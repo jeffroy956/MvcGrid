@@ -19,6 +19,7 @@ namespace MvcGrid.Data
                     BookValue bookValue = new BookValue()
                     {
                         CompanyName = company.Name,
+                        Industry = company.Industry,
                         Symbol = company.Symbol,
                         YearsAgo = i,
                         MarketCap = FakeNumbers.GetNextDecimal(50000, 100000)

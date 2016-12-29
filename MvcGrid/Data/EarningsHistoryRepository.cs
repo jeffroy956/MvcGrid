@@ -26,6 +26,7 @@ namespace MvcGrid.Data
                     EarningsHistory earningsValue = new EarningsHistory()
                     {
                         CompanyName = company.Name,
+                        Industry = company.Industry,
                         Symbol = company.Symbol,
                         YearsAgo = i,
                         TotalEarnings = baseCompanyEarnings,

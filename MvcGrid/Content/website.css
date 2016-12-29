@@ -82,6 +82,10 @@ th.col--short-numeric {
   font-size: 1.1em;
   font-weight: bold;
 }
+.info-panel__company {
+  font-size: 1.1em;
+  font-weight: bold;
+}
 .stock-detail__price-info {
   padding: 3px;
   padding-right: 0;
@@ -119,6 +123,11 @@ th.col--short-numeric {
 }
 .dashboard--whole {
   width: 100%;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1500px !important;
+  }
 }
 
 /*# sourceMappingURL=website.css.map */

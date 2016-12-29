@@ -22,6 +22,7 @@ namespace MvcGrid.Models
                 dynamic pivotedBookValue = new ExpandoObject();
                 var pivotCols = (IDictionary<string, object>)pivotedBookValue;
                 pivotedBookValue.CompanyName = companyData.Key;
+                pivotedBookValue.Industry = companyData.First().Industry;
                 pivotedBookValue.Symbol = companyData.First().Symbol;
                 pivotedBookValue.NumYears = numYears;
                 pivotedBookValue.BaseYear = DateTime.Now.Year;

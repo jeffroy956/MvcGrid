@@ -20,6 +20,7 @@ namespace MvcGrid.Models
                 dynamic pivotedEarningsPerShare = new ExpandoObject();
                 var pivotCols = (IDictionary<string, object>)pivotedEarningsPerShare;
                 pivotedEarningsPerShare.CompanyName = companyData.Key;
+                pivotedEarningsPerShare.Industry = companyData.First().Industry;
                 pivotedEarningsPerShare.Symbol = companyData.First().Symbol;
                 pivotedEarningsPerShare.NumYears = numYears;
                 pivotedEarningsPerShare.BaseYear = DateTime.Now.Year;
