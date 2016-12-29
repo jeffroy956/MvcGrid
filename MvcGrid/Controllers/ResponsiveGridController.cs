@@ -10,8 +10,7 @@ namespace MvcGrid.Controllers
 {
     public class ResponsiveGridController : Controller
     {
-        // GET: ResponsiveGrid
-        public ActionResult Index()
+        public ActionResult Price()
         {
             PriceHistoryRepository swRepo = new PriceHistoryRepository();
 

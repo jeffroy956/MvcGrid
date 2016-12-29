@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcGrid.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,9 @@ namespace MvcGrid.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            Dashboard dashboard = new Dashboard();
+
+            return View(dashboard);
         }
         
     }

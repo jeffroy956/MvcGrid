@@ -104,5 +104,21 @@ th.col--short-numeric {
     width: 50%;
   }
 }
+.dashboard__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dashboard--half {
+  width: 50%;
+  padding: 3px;
+}
+@media only screen and (max-width: 1200px) {
+  .dashboard--half {
+    width: 100%;
+  }
+}
+.dashboard--whole {
+  width: 100%;
+}
 
 /*# sourceMappingURL=website.css.map */

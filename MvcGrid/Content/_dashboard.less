@@ -1,0 +1,18 @@
+﻿@import "_variables";
+
+.dashboard__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dashboard--half {
+    width: 50%;
+    padding: @standardPadding;
+    @media only screen and (max-width: @narrowDesktopWidth) {
+        width: 100%;
+    }
+}
+
+.dashboard--whole {
+    width: 100%;
+}
