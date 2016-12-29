@@ -85,6 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\BookValuePivotFixture.cs" />
+    <Compile Include="Models\EarningsHistoryPivotFixture.cs" />
+    <Compile Include="Models\FakeNumbersFixture.cs" />
     <Compile Include="Models\YearsAgoFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ResourcesFixture.cs" />

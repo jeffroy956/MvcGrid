@@ -12,8 +12,8 @@ namespace MvcGrid.Tests.Resources
         public void GetEmbeddedTemplate()
         {
             var templateContent = ResourceHelper.GetIgniteTemplate("MobileStockDetailTemplate");
-            Assert.IsTrue(templateContent.StartsWith("<div class=\"stock-row__container\">"), 
-                $"template starts with <div class=\"stock-row__info-panel\", actual content: {templateContent}");
+            Assert.IsTrue(templateContent.StartsWith("<div class=\"mobile-row__container\">"), 
+                $"template starts with <div class=\"mobile-row__container\", actual content: {templateContent}");
         }
 
         [TestMethod]

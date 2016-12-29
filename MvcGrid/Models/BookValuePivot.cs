@@ -9,11 +9,13 @@ namespace MvcGrid.Models
     public class BookValuePivot
     {
 
-        public static List<dynamic> Pivot(IEnumerable<BookValue> pivotSource, int numYears)
+        public static List<dynamic> Pivot(IEnumerable<BookValue> pivotSource)
         {
             List<dynamic> pivotData = new List<dynamic>();
 
             var groupedData = pivotSource.GroupBy(bv => bv.CompanyName);
+
+            int numYears = pivotSource.Max(ps => ps.YearsAgo) + 1;
 
             foreach(var companyData in groupedData)
             {

@@ -29,7 +29,7 @@ namespace MvcGrid.Tests.Models
                 TotalLiabilities = 125
             });
 
-            List<dynamic> pivotResults = BookValuePivot.Pivot(pivotSource, 2);
+            List<dynamic> pivotResults = BookValuePivot.Pivot(pivotSource);
             Assert.AreEqual(1, pivotResults.Count, "pivotResults.Count");
             Assert.AreEqual(100, pivotResults[0].MarketCap0);
             Assert.AreEqual(80, pivotResults[0].MarketCap1);
@@ -56,7 +56,7 @@ namespace MvcGrid.Tests.Models
                 TotalLiabilities = 125
             });
 
-            List<dynamic> pivotResults = BookValuePivot.Pivot(pivotSource, 2);
+            List<dynamic> pivotResults = BookValuePivot.Pivot(pivotSource);
             Assert.AreEqual(200, pivotResults[0].TotalAssets0);
             Assert.AreEqual(150, pivotResults[0].TotalAssets1);
             Assert.AreEqual(150, pivotResults[0].TotalLiabilities0);
@@ -64,7 +64,7 @@ namespace MvcGrid.Tests.Models
         }
 
         [TestMethod]
-        public void PivotBookToMaketForTwoYears()
+        public void PivotBookToMarketForTwoYears()
         {
             List<BookValue> pivotSource = new List<BookValue>();
             pivotSource.Add(new BookValue()
@@ -84,13 +84,13 @@ namespace MvcGrid.Tests.Models
                 TotalLiabilities = 125
             });
 
-            List<dynamic> pivotResults = BookValuePivot.Pivot(pivotSource, 2);
+            List<dynamic> pivotResults = BookValuePivot.Pivot(pivotSource);
             Assert.AreEqual(0.5M, pivotResults[0].BookToMarket0);
-            Assert.AreEqual(0.3125M, pivotResults[0].BookToMarket1);
+            Assert.AreEqual(0.31M, pivotResults[0].BookToMarket1);
         }
 
         [TestMethod]
-        public void PivotBookToMaketForTwoCustomers()
+        public void PivotBookToMarketForTwoCustomers()
         {
             List<BookValue> pivotSource = new List<BookValue>();
             pivotSource.Add(new BookValue()
@@ -110,11 +110,11 @@ namespace MvcGrid.Tests.Models
                 TotalLiabilities = 125
             });
 
-            List<dynamic> pivotResults = BookValuePivot.Pivot(pivotSource, 2);
+            List<dynamic> pivotResults = BookValuePivot.Pivot(pivotSource);
             Assert.AreEqual(2, pivotResults.Count);
 
             Assert.AreEqual(0.5M, pivotResults[0].BookToMarket0);
-            Assert.AreEqual(0.3125M, pivotResults[1].BookToMarket0);
+            Assert.AreEqual(0.31M, pivotResults[1].BookToMarket0);
         }
 
     }

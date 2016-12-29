@@ -14,5 +14,12 @@ namespace MvcGrid.Data
             return floor + Math.Round((decimal)_rand.NextDouble() * maxDelta, 2);
         }
 
+        public static decimal VaryByPercentage(decimal target, decimal maxPercentage)
+        {
+            decimal percentVariation = GetNextDecimal(0, maxPercentage * 2) - maxPercentage;
+
+            return Math.Round(target * (1M + percentVariation / 100M), 2);
+        }
+
     }
 }

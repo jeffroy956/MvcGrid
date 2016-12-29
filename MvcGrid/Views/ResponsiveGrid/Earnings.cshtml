@@ -5,35 +5,35 @@
 
 @model IQueryable<dynamic>
 
-<h2>Book to Market</h2>
-<div id="igBookGrid"></div>
+<h2>Earnings Per Share</h2>
+<div id="igEpsGrid"></div>
 
 <script type="text/javascript">
-    var bookValueResults = @Html.Raw(JsonConvert.SerializeObject(Model));
+    var epsResults = @Html.Raw(JsonConvert.SerializeObject(Model));
 </script>
 
 <script type="text/javascript">
     $(function () {
-        var bvColumns = [
+        var epsColumns = [
             { headerText: "Company", key: "CompanyName" },
             { headerText: "Symbol", key: "Symbol", headerCssClass: "col--narrow-text", columnCssClass: "col--narrow-text" }
         ];
 
-        var bookValueGroup = {
-            headerText: "Book To Market",
+        var epsGroup = {
+            headerText: "Earnings Per Share",
             group: []
         };
-        for(var i = 0; i < bookValueResults[0].NumYears; i++) {
-            var yearHeaderText = (bookValueResults[0].BaseYear - i).toString();
-            bookValueGroup.group.push({headerText: yearHeaderText, key: "BookToMarket" + i,
+        for(var i = 0; i < epsResults[0].NumYears; i++) {
+            var yearHeaderText = (epsResults[0].BaseYear - i).toString();
+            epsGroup.group.push({headerText: yearHeaderText, key: "EPS" + i,
                 columnCssClass: "col--short-numeric", headerCssClass:"col--short-numeric", width: "70px"});
         }
 
-        bvColumns.push(bookValueGroup);
+        epsColumns.push(epsGroup);
 
-        $("#igBookGrid").igGrid({
-            columns: bvColumns,
-            dataSource: bookValueResults,
+        $("#igEpsGrid").igGrid({
+            columns: epsColumns,
+            dataSource: epsResults,
             width: "100%",
             features: [
                 {
@@ -43,7 +43,7 @@
                     name: "Responsive",
                     enableVerticalRendering: false,
                     singleColumnTemplate: {
-                        phone: '@Html.Raw(YearsAgo.ReplaceContentLabels(ResourceHelper.GetIgniteTemplate("MobilePriceToBookTemplate"), DateTime.Now.Year))'
+                        phone: '@Html.Raw(YearsAgo.ReplaceContentLabels(ResourceHelper.GetIgniteTemplate("MobileEarningsPerShareTemplate"), DateTime.Now.Year))'
                     }
                  }
 
@@ -51,3 +51,4 @@
         })
     })
 </script>
+

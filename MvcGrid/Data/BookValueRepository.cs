@@ -31,7 +31,6 @@ namespace MvcGrid.Data
                 }
             }
 
-
             return results;
         }
     }

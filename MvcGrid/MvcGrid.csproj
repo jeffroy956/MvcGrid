@@ -170,6 +170,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResponsiveGridController.cs" />
     <Compile Include="Data\BookValueRepository.cs" />
+    <Compile Include="Data\EarningsHistoryRepository.cs" />
     <Compile Include="Data\PriceHistoryRepository.cs" />
     <Compile Include="Data\FakeNumbers.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,6 +181,8 @@
     <Compile Include="Models\BookValue.cs" />
     <Compile Include="Models\BookValuePivot.cs" />
     <Compile Include="Models\Business.cs" />
+    <Compile Include="Models\EarningsHistory.cs" />
+    <Compile Include="Models\EarningsHistoryPivot.cs" />
     <Compile Include="Models\PriceHistory.cs" />
     <Compile Include="Models\YearsAgo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -927,6 +930,7 @@
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
     <Content Include="Scripts\_references.js" />
     <EmbeddedResource Include="Templates\MobilePriceToBookTemplate.html" />
+    <EmbeddedResource Include="Templates\MobileEarningsPerShareTemplate.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -944,6 +948,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\ResponsiveGrid\Index.cshtml" />
     <Content Include="Views\ResponsiveGrid\Book.cshtml" />
+    <Content Include="Views\ResponsiveGrid\Earnings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

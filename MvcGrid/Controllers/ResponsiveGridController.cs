@@ -21,7 +21,15 @@ namespace MvcGrid.Controllers
         public ActionResult Book()
         {
             BookValueRepository bvr = new BookValueRepository();
-            var pivotedData = BookValuePivot.Pivot(bvr.GetAll(5), 5);
+            var pivotedData = BookValuePivot.Pivot(bvr.GetAll(5));
+
+            return View(pivotedData.AsQueryable());
+        }
+
+        public ActionResult Earnings()
+        {
+            EarningsHistoryRepository ehr = new EarningsHistoryRepository();
+            var pivotedData = EarningsHistoryPivot.Pivot(ehr.GetAll(5));
 
             return View(pivotedData.AsQueryable());
         }
