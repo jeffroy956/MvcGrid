@@ -124,6 +124,24 @@ th.col--short-numeric {
 .dashboard--whole {
   width: 100%;
 }
+.company-summary__list {
+  list-style: none;
+}
+.company-summary__profile {
+  max-width: 700px;
+}
+.company__industry {
+  font-size: 1.3em;
+  margin-bottom: 3px;
+}
+.company-metrics__container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.company-metrics__column {
+  width: 50%;
+}
 @media (min-width: 1200px) {
   .container {
     max-width: 1500px !important;

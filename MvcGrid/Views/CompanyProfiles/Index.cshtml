@@ -1,0 +1,17 @@
+﻿@using MvcGrid.Models
+@model IEnumerable<CompanySummary>
+
+@{
+    ViewBag.Title = "Company Profile";
+}
+
+<ul class="company-summary__list">
+    @foreach (var summary in Model)
+    {
+        <li>
+            @Html.Partial("CompanySingle", summary)
+        </li>
+    }
+</ul>
+
+

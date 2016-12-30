@@ -10,6 +10,8 @@ namespace MvcGrid.Models
         public string Industry { get; set; }
         public string Symbol { get; set; }
         public string Name { get; set; }
+        public string Profile { get; set; } = string.Join("  ", Faker.Lorem.Sentences(10).ToArray());
+        public int Employees { get; set; } = FakeNumbers.GetNextInt(5000, 100000);
 
         public static Business[] SampleCompanies = new[]
         {

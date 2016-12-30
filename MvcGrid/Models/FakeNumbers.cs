@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MvcGrid.Data
+namespace MvcGrid.Models
 {
     public static class FakeNumbers
     {
         private static Random _rand = new Random();
+
+        public static int GetNextInt(int floor, int ceiling)
+        {
+            return _rand.Next(floor, ceiling);
+        }
 
         public static decimal GetNextDecimal(decimal floor, decimal maxDelta)
         {

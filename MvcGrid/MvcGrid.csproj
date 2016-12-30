@@ -168,11 +168,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CompanyProfilesController.cs" />
     <Compile Include="Controllers\ResponsiveGridController.cs" />
     <Compile Include="Data\BookValueRepository.cs" />
+    <Compile Include="Data\CompanySummaryRepository.cs" />
     <Compile Include="Data\EarningsHistoryRepository.cs" />
     <Compile Include="Data\PriceHistoryRepository.cs" />
-    <Compile Include="Data\FakeNumbers.cs" />
+    <Compile Include="Models\CompanySummary.cs" />
+    <Compile Include="Models\FakeNumbers.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,6 +195,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\_dashboard.less" />
+    <Content Include="Content\_companyProfiles.less" />
     <None Include="Content\_grid.less" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -951,6 +955,8 @@
     <Content Include="Views\ResponsiveGrid\Price.cshtml" />
     <Content Include="Views\ResponsiveGrid\Book.cshtml" />
     <Content Include="Views\ResponsiveGrid\Earnings.cshtml" />
+    <Content Include="Views\CompanyProfiles\Index.cshtml" />
+    <Content Include="Views\CompanyProfiles\CompanySingle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
