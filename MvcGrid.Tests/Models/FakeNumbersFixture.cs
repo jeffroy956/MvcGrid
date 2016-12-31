@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MvcGrid.Data;
+using MvcGrid.Models;
 
 namespace MvcGrid.Tests.Models
 {

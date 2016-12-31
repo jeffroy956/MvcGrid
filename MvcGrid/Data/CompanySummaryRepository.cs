@@ -36,10 +36,8 @@ namespace MvcGrid.Data
                 CompanyProfile = company,
                 CurrentPrice = FakeNumbers.GetNextDecimal(20, 200),
                 AverageVolume = FakeNumbers.GetNextDecimal(8, 50),
-                MarketCap = FakeNumbers.GetNextDecimal(10, 500),
-                SharesOutstanding = FakeNumbers.GetNextDecimal(1, 10),
-                EPS = FakeNumbers.GetNextDecimal(0, 5),
-                PERatio = FakeNumbers.GetNextDecimal(11, 30),
+                SharesOutstanding = FakeNumbers.GetNextDecimal(1M, 2),
+                EPS = FakeNumbers.GetNextDecimal(1, 10),
                 AnnualDividend = FakeNumbers.GetNextDecimal(1, 6),
                 ExDividend = DateTime.Today.AddDays(-1 * FakeNumbers.GetNextInt(0, 90)),
                 PercentHeldByInstitutions = FakeNumbers.GetNextDecimal(10, 85)

@@ -10,10 +10,22 @@ namespace MvcGrid.Models
         public Business CompanyProfile { get; set; }
         public Decimal CurrentPrice { get; set; }
         public decimal AverageVolume { get; set; }
-        public decimal MarketCap { get; set; }
+        public decimal MarketCap
+        {
+            get
+            {
+                return Math.Round(SharesOutstanding * CurrentPrice, 2);
+            }
+        }
         public decimal SharesOutstanding { get; set; }
         public decimal EPS { get; set; }
-        public decimal PERatio { get; set; }
+        public decimal PERatio
+        {
+            get
+            {
+                return Math.Round(CurrentPrice / EPS, 2);
+            }
+        }
         public decimal AnnualDividend { get; set; }
         public decimal DividendYield
         {
