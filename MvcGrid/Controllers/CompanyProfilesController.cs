@@ -14,7 +14,7 @@ namespace MvcGrid.Controllers
         {
             if (!string.IsNullOrEmpty(symbol))
             {
-                return View("CompanySingle", repo.Get(symbol));
+                return View(new[] { repo.Get(symbol) });
             }
             return View(repo.GetAll());
         }

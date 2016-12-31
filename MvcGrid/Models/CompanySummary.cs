@@ -26,5 +26,7 @@ namespace MvcGrid.Models
 
         public decimal PercentHeldByInstitutions { get; set; }
 
+        public List<SeriesDateValue> PriceHistory { get; } = new List<SeriesDateValue>();
+
     }
 }

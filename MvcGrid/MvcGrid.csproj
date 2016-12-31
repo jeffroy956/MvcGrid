@@ -188,14 +188,17 @@
     <Compile Include="Models\EarningsHistory.cs" />
     <Compile Include="Models\EarningsHistoryPivot.cs" />
     <Compile Include="Models\PriceHistory.cs" />
+    <Compile Include="Models\SeriesDateValue.cs" />
     <Compile Include="Models\YearsAgo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bower_components\moment\min\moment.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\_dashboard.less" />
     <Content Include="Content\_companyProfiles.less" />
+    <Content Include="bower.json" />
     <None Include="Content\_grid.less" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

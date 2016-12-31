@@ -4,6 +4,11 @@
 @{
     ViewBag.Title = "Company Profile";
 }
+    <!--CSS file specific for chart styling -->
+<link href="http://cdn-na.infragistics.com/igniteui/2016.2/latest/css/structure/modules/infragistics.ui.chart.css" rel="stylesheet" />
+<script src="http://cdn-na.infragistics.com/igniteui/2016.2/latest/js/infragistics.dv.js"></script>
+<script src="~/bower_components/moment/min/moment.min.js"></script>
+
 <ul class="company-summary__list">
     @foreach (var summary in Model)
     {

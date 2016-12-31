@@ -31,7 +31,7 @@ namespace MvcGrid.Data
 
         private static CompanySummary GenerateSummary(Business company)
         {
-            return new CompanySummary()
+            CompanySummary summary = new CompanySummary()
             {
                 CompanyProfile = company,
                 CurrentPrice = FakeNumbers.GetNextDecimal(20, 200),
@@ -44,6 +44,21 @@ namespace MvcGrid.Data
                 ExDividend = DateTime.Today.AddDays(-1 * FakeNumbers.GetNextInt(0, 90)),
                 PercentHeldByInstitutions = FakeNumbers.GetNextDecimal(10, 85)
             };
+
+            for(int i = 0; i < 365; i++)
+            {
+                if (i == 0)
+                {
+                    summary.PriceHistory.Add(new SeriesDateValue(DateTime.Today, summary.CurrentPrice));
+                }
+                else
+                {
+                    summary.PriceHistory.Add(new SeriesDateValue(DateTime.Today.AddDays(-1 * i),
+                        Math.Max(10M, FakeNumbers.VaryByPercentage(summary.PriceHistory[i - 1].Value, 1M))));
+                }
+            }
+
+            return summary;
         }
     }
 }
