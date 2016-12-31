@@ -43,7 +43,7 @@ namespace MvcGrid.Data
                 PercentHeldByInstitutions = FakeNumbers.GetNextDecimal(10, 85)
             };
 
-            for(int i = 0; i < 365; i++)
+            for(int i = 0; i < 30; i++)
             {
                 if (i == 0)
                 {

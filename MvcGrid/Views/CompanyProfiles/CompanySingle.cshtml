@@ -6,52 +6,13 @@
     string priceHistoryVariableName = "priceHistory" + Model.CompanyProfile.Symbol;
     string chartId = "chart" + Model.CompanyProfile.Symbol;
 }
-<script type="text/javascript">
-    var @priceHistoryVariableName = @Html.Raw(JsonConvert.SerializeObject(Model.PriceHistory.OrderBy(ph => ph.Date)));
-</script>
 
 <h2>@Model.CompanyProfile.Name [@Model.CompanyProfile.Symbol]</h2>
 <div class="company__industry">@Model.CompanyProfile.Industry</div>
 <div class="company-summary">
-    <div class="chart-constrictor">
-        <div id="@chartId">
-        </div>
-    </div>
     <p class="company-summary__profile">
         @Model.CompanyProfile.Profile
     </p>
-    <script type="text/javascript">
-        $("#@chartId").igDataChart({
-            width: "100%",
-            title: "Price History",
-            axes: [
-                {
-                    name: "xAxis",
-                    type: "categoryX",
-                    dataSource: @priceHistoryVariableName,
-                    label: "Date",
-                    interval: 90,
-                    formatLabel: function(item) {
-                        return moment(item.Date).format("MMM YY");
-                    }
-                },
-                {
-                    name: "yAxis",
-                    type: "numericY"
-                }
-            ],
-            series: [
-                {
-                    dataSource: @priceHistoryVariableName,
-                    name: "series1",
-                    type: "line",
-                    xAxis: "xAxis",
-                    yAxis: "yAxis",
-                    valueMemberPath: "Value"
-                }
-            ]
-        })
-    </script>
     <div class="company-metrics__container">
         <div class="company-metrics__column">
             <div class="company-metrics__item">
@@ -97,6 +58,48 @@
                 <span>@(Model.PercentHeldByInstitutions + "%")</span>
             </div>
         </div>
+        <div class="company-metrics__column chart">
+            <div class="chart-constrictor">
+                <div id="@chartId">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<script type="text/javascript">
+    var @priceHistoryVariableName = @Html.Raw(JsonConvert.SerializeObject(Model.PriceHistory.OrderBy(ph => ph.Date)));
+</script>
+<script type="text/javascript">
+    $("#@chartId").igDataChart({
+        height: "250px",
+        width: "100%",
+        title: "Price",
+        axes: [
+            {
+                name: "xAxis",
+                type: "categoryX",
+                dataSource: @priceHistoryVariableName,
+                label: "Date",
+                interval: 5,
+                formatLabel: function(item) {
+                    return moment(item.Date).format("MMM D");
+                }
+            },
+            {
+                name: "yAxis",
+                type: "numericY"
+            }
+        ],
+        series: [
+            {
+                dataSource: @priceHistoryVariableName,
+                name: "series1",
+                type: "line",
+                xAxis: "xAxis",
+                yAxis: "yAxis",
+                valueMemberPath: "Value"
+            }
+        ]
+    })
+</script>
 

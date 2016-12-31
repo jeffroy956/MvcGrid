@@ -5,11 +5,8 @@
     padding: 0;
 }
 
-.chart-constrictor {
-    max-width: 700px;
-}
 .company-summary__profile{
-    max-width: 700px;
+    max-width: 850px;
 }
 
 .company__industry {
@@ -19,15 +16,33 @@
 .company-metrics__container {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 75%;
     
     @media only screen and (max-width: @narrowDesktopWidth) {
         width: 100%;
     }
 }
 
+.chart-constrictor {
+    max-width: 500px;
+}
+
 .company-metrics__column {
-    width: 50%;
+    padding-top: 2em;
+    &:last-child {
+        padding-top: 0;
+    }
+    width: calc(100% / 3);
+
+    /*re-order chart in flexbox to display before metrics on smaller devices*/
+    @media only screen and (max-width: @phoneWidth) {
+        width: 50%;
+        &.chart {
+            order: -1;
+            width: 100%;
+        }
+    }
+
     @media only screen and (max-width: @tinyWidth) {
         width: 100%;
     }
