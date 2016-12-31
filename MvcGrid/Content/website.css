@@ -139,8 +139,33 @@ th.col--short-numeric {
   flex-wrap: wrap;
   width: 50%;
 }
+@media only screen and (max-width: 1200px) {
+  .company-metrics__container {
+    width: 100%;
+  }
+}
 .company-metrics__column {
   width: 50%;
+}
+@media only screen and (max-width: 500px) {
+  .company-metrics__column {
+    width: 100%;
+  }
+}
+.company-metrics__item {
+  display: flex;
+}
+.company-metrics__item label {
+  padding: 3px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #ccc;
+}
+.company-metrics__item span {
+  padding: 3px;
+  flex: 1;
+  text-align: right;
+  margin-right: 1em;
+  border-bottom: 1px solid #ccc;
 }
 @media (min-width: 1200px) {
   .container {

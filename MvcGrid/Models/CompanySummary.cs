@@ -24,5 +24,7 @@ namespace MvcGrid.Models
         }
         public DateTime ExDividend { get; set; }
 
+        public decimal PercentHeldByInstitutions { get; set; }
+
     }
 }

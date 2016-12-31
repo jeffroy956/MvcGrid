@@ -41,7 +41,8 @@ namespace MvcGrid.Data
                 EPS = FakeNumbers.GetNextDecimal(0, 5),
                 PERatio = FakeNumbers.GetNextDecimal(11, 30),
                 AnnualDividend = FakeNumbers.GetNextDecimal(1, 6),
-                ExDividend = DateTime.Today.AddDays(-1 * FakeNumbers.GetNextInt(0, 90))
+                ExDividend = DateTime.Today.AddDays(-1 * FakeNumbers.GetNextInt(0, 90)),
+                PercentHeldByInstitutions = FakeNumbers.GetNextDecimal(10, 85)
             };
         }
     }

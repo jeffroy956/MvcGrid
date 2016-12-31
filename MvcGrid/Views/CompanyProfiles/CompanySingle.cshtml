@@ -17,6 +17,14 @@
                 <span>@Model.CompanyProfile.Employees.ToString("N0")</span>
             </div>
             <div class="company-metrics__item">
+                <label>Market Cap</label>
+                <span>@(Model.MarketCap + "B")</span>
+            </div>
+            <div class="company-metrics__item">
+                <label>Shares Outstanding</label>
+                <span>@(Model.SharesOutstanding + "B")</span>
+            </div>
+            <div class="company-metrics__item">
                 <label>Price</label>
                 <span>@Model.CurrentPrice</span>
             </div>
@@ -27,14 +35,6 @@
         </div>
         <div class="company-metrics__column">
             <div class="company-metrics__item">
-                <label>Market Cap</label>
-                <span>@(Model.MarketCap + "B")</span>
-            </div>
-            <div class="company-metrics__item">
-                <label>Shares Outstanding</label>
-                <span>@(Model.SharesOutstanding + "B")</span>
-            </div>
-            <div class="company-metrics__item">
                 <label>EPS</label>
                 <span>@(Model.EPS)</span>
             </div>
@@ -43,12 +43,16 @@
                 <span>@(Model.PERatio)</span>
             </div>
             <div class="company-metrics__item">
-                <label>Annual Dividend/Yield</label>
+                <label>Annual Dividend / Yield</label>
                 <span>@("$" + Model.AnnualDividend) / @(Model.DividendYield + "%")</span>
             </div>
             <div class="company-metrics__item">
                 <label>Ex-dividend</label>
                 <span>@(Model.ExDividend.ToString("MM/dd/yy"))</span>
+            </div>
+            <div class="company-metrics__item">
+                <label>% Held by Institutions</label>
+                <span>@(Model.PercentHeldByInstitutions + "%")</span>
             </div>
         </div>
     </div>

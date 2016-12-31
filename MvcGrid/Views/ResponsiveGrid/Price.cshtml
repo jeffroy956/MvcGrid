@@ -10,7 +10,7 @@
     .AutoGenerateColumns(false)
     .Columns(column =>
     {
-        column.For(x => x.CompanyName).HeaderText("Company");
+        column.For(x => x.CompanyName).HeaderText("Company").Template("<a href='/CompanyProfiles?symbol=${Symbol}'>${CompanyName}</a>");
         column.For(x => x.Industry);
         column.For(x => x.Symbol).Width("70px");
         column.MultiColumnHeader().HeaderText("Current")

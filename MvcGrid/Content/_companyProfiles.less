@@ -16,8 +16,31 @@
     display: flex;
     flex-wrap: wrap;
     width: 50%;
+    
+    @media only screen and (max-width: @narrowDesktopWidth) {
+        width: 100%;
+    }
 }
 
 .company-metrics__column {
     width: 50%;
+    @media only screen and (max-width: @tinyWidth) {
+        width: 100%;
+    }
+}
+
+.company-metrics__item {
+    display: flex;
+    label {
+        padding:@standardPadding;
+        margin-bottom: 0;
+        border-bottom: 1px solid @igMediumGrey;
+    }
+    span {
+        padding:@standardPadding;
+        flex: 1;
+        text-align: right;
+        margin-right: 1em;
+        border-bottom: 1px solid @igMediumGrey;
+    }
 }

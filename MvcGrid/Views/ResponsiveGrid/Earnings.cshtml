@@ -15,7 +15,7 @@
 <script type="text/javascript">
     $(function () {
         var epsColumns = [
-            { headerText: "Company", key: "CompanyName" },
+            { headerText: "Company", key: "CompanyName", template: "<a href='/CompanyProfiles?symbol=${Symbol}'>${CompanyName}</a>" },
             { headerText: "Industry", key: "Industry"},
             { headerText: "Symbol", key: "Symbol", headerCssClass: "col--narrow-text", columnCssClass: "col--narrow-text" }
         ];
